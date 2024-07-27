@@ -41,14 +41,11 @@ source venv/bin/activate # On Windows, use `venv\Scripts\activate`
 pip install -r requirements.txt
 ```
 
-## 4. Set up environment variables
+## 4. Set up environment variables and Configure the values in .env file
 
 ```sh
-cp .env.example .env
+mkdir .env
 ```
-
-## 5. Configure the values in .env file
-
 ```sh
 GMAIL_ADDRESS=your-email@gmail.com
 GMAIL_PASSWORD=your-email-app-password
@@ -56,7 +53,7 @@ KEYWORDS=keyword1,keyword2,keyword3
 FORWARD_TO=your-forward-emain@gmail.com
 ```
 
-## 6. Run the script
+## 5. Run the script
 ```sh
 python main.py
 ```
