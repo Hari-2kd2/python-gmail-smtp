@@ -1,4 +1,4 @@
-To make sure the environment variables are set up correctly and included in a single section of your `README.md` file, you can use a single code block for the setup. Here’s how it can be done:
+Certainly! Here's the `README.md` with the clone repository step separated for clarity:
 
 ```markdown
 # Email Forwarding and Google Meet Scheduling Script
@@ -52,7 +52,7 @@ pip install -r requirements.txt
 
 Create a `.env` file with the following content:
 
-```sh
+```plaintext
 GMAIL_ADDRESS=your-email@gmail.com
 GMAIL_PASSWORD=your-email-app-password
 KEYWORDS=keyword1,keyword2,keyword3
@@ -67,4 +67,4 @@ python main.py
 
 ---
 
-This ensures that all environment variables are included in a single code block, making it clear and easy to copy the entire setup.
+This format ensures that each step is clearly outlined and easy to follow. The environment variables are included in a single code block to make it easier for users to copy and paste them.
