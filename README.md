@@ -41,7 +41,7 @@ source venv/bin/activate # On Windows, use `venv\Scripts\activate`
 pip install -r requirements.txt
 ```
 
-## 4. Set up environment variables and Configure the values in .env file
+## 4. Set up environment variables
 
 ```sh
 mkdir .env
