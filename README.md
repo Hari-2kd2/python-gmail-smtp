@@ -25,10 +25,11 @@ This project is a Python script designed to check for unread emails in a Gmail a
 ## Seen Handler
 
 - Use the provided function to mark all messages as read in your inbox.
+```
 
 ## Setup
 
-### 1. Clone the Repository
+## 1. Clone the Repository
 
 ```sh
 git clone https://github.com/Hari-2kd2/python-gmail-smtp.git
