@@ -26,26 +26,30 @@ This project is a Python script designed to check for unread emails in a Gmail a
 ## Setup
 
 ## 1. Clone the repository
+
+```sh
   - git clone https://github.com/Hari-2kd2/python-gmail-smtp.git
   - cd python-gmail-smtp
-
+```
 ## 2. Create a virtual environment
-
+```sh
 - python -m venv venv
 - source venv/bin/activate # On Windows, use `venv\Scripts\activate`
-
+```
 ## 3. Install dependencies
-
+```sh
 - pip install -r requirements.txt
+```
 
 ## 4. Set up environment variables
-
+```sh
 - GMAIL_ADDRESS=your-email@gmail.com
 - GMAIL_PASSWORD=your-email-app-password
 - KEYWORDS=keyword1,keyword2,keyword3
 - FORWARD_TO=your-forward-emain@gmail.com
+```
 
 ## 5. Run the script
-
+```sh
 - python main.py
 ```
