@@ -9,7 +9,7 @@ def load_env_variables():
     smtp_port = 587
     username = os.getenv("GMAIL_ADDRESS")
     password = os.getenv("GMAIL_PASSWORD")
-    forward_to = "mr.hari.narayanan@outlook.com"
+    forward_to =  os.getenv("FORWARD_TO")
     keywords = os.getenv("KEYWORDS", "").split(",")
 
     if not username or not password:

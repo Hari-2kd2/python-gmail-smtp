@@ -20,12 +20,32 @@ This project is a Python script designed to check for unread emails in a Gmail a
 - `credentials.json` file for Google API credentials.
 
 ## Seen Handler
+
 - Just use that function to make all messages as read from your inbox
 
 ## Setup
 
-### 1. Clone the repository
+## 1. Clone the repository
+  - git clone https://github.com/Hari-2kd2/python-gmail-smtp.git
+  - cd python-gmail-smtp
 
-<!-- ```sh
-git clone https://github.com/yourusername/email-forwarding-script.git
-cd email-forwarding-script -->
+## 2. Create a virtual environment
+
+- python -m venv venv
+- source venv/bin/activate # On Windows, use `venv\Scripts\activate`
+
+## 3. Install dependencies
+
+- pip install -r requirements.txt
+
+## 4. Set up environment variables
+
+- GMAIL_ADDRESS=your-email@gmail.com
+- GMAIL_PASSWORD=your-email-app-password
+- KEYWORDS=keyword1,keyword2,keyword3
+- FORWARD_TO=your-forward-emain@gmail.com
+
+## 5. Run the script
+
+- python main.py
+```
