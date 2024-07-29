@@ -88,4 +88,5 @@ The provided script includes functionality to mark all unread messages as read i
 
 For further assistance, please check the [Google Calendar API documentation](https://developers.google.com/calendar) and the [IMAPClient documentation](https://imapclient.readthedocs.io/en/latest/).
 
+##
 This README provides a clear guide for setting up and running the project, with additional explanations for each file’s purpose and troubleshooting tips.
