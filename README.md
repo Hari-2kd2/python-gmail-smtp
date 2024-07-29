@@ -1,4 +1,4 @@
-Here’s the complete `README.md` for your project with the additional details included:
+Here is the updated `README.md` file with the necessary changes for setting up OAuth 2.0, including instructions for dealing with verification issues:
 
 ```markdown
 # Email Forwarding and Google Meet Scheduling Script
@@ -7,7 +7,7 @@ This project is a Python script designed to check for unread emails in a Gmail a
 
 ## Features
 
-- Connects to a Gmail account using IMAP.
+- Connects to a Gmail account using OAuth 2.0.
 - Searches for unread emails in the inbox.
 - Checks the body of each email for specified keywords.
 - Forwards emails containing any of the keywords to a specified recipient.
@@ -17,12 +17,13 @@ This project is a Python script designed to check for unread emails in a Gmail a
 ## Prerequisites
 
 - Python 3.x
-- Gmail account with IMAP access enabled.
+- Gmail account with OAuth 2.0 access enabled.
 - Google Cloud project with Calendar API enabled.
 - Environment variables set up for Gmail credentials and keywords.
 - `credentials.json` file for Google API credentials.
 ```
-## Installation
+
+## Setup
 
 ### 1. Clone the Repository
 
@@ -35,7 +36,7 @@ cd python-gmail-smtp
 
 ```sh
 python -m venv venv
-source venv/bin/activate # On Windows, use `venv\Scripts\activate`
+source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
 ```
 
 ### 3. Install Dependencies
@@ -44,9 +45,33 @@ source venv/bin/activate # On Windows, use `venv\Scripts\activate`
 pip install -r requirements.txt
 ```
 
-### 4. Set Up Environment Variables
+### 4. Set Up OAuth 2.0 Credentials
 
-Create a `.env` file in the root directory with the following content:
+1. **Go to Google Cloud Console:**
+   - Visit the [Google Cloud Console](https://console.cloud.google.com/).
+
+2. **Navigate to OAuth Consent Screen:**
+   - Click on **APIs & Services** > **OAuth consent screen**.
+   - Configure the consent screen by entering your application name, support email, and scopes.
+   - Save your changes.
+
+3. **Create OAuth 2.0 Credentials:**
+   - Click on **APIs & Services** > **Credentials**.
+   - Click on **Create Credentials** and select **OAuth 2.0 Client IDs**.
+   - Choose the appropriate application type (e.g., Desktop app for a script).
+   - Download the `credentials.json` file.
+
+4. **Set Up Redirect URIs (if applicable):**
+   - For desktop apps, you typically don’t need to set redirect URIs.
+   - For web apps, specify redirect URIs and authorized domains.
+
+5. **Request Verification (if needed):**
+   - If using sensitive or restricted scopes, you may need to submit your app for verification.
+   - Go to [OAuth App Verification](https://support.google.com/cloud/answer/9110914) and follow the instructions.
+
+### 5. Set Up Environment Variables
+
+Create a `.env` file in the project root with the following content:
 
 ```plaintext
 GMAIL_ADDRESS=your-email@gmail.com
@@ -55,38 +80,44 @@ KEYWORDS=keyword1,keyword2,keyword3
 FORWARD_TO=your-forward-email@gmail.com
 ```
 
-### 5. Configure Google API Credentials
-
-Place your Google API credentials file in the root directory and name it `credentials.json`.
-
 ### 6. Run the Script
 
 ```sh
 python main.py
 ```
 
-## File Descriptions
-
-- **`main.py`**: The entry point of the script. It runs the main functions to process emails and schedule Google Meet events.
-- **`email_checker.py`**: Contains functions to check for unread emails and process them based on keywords.
-- **`check_current_date_mail.py`**: Contains functions to process emails received today and create Google Meet events.
-- **`email_forwarder.py`**: Contains functions to forward emails to a specified recipient.
-- **`gmeet_scheduler.py`**: Contains functions to create Google Meet events using the Google Calendar API.
-- **`login.py`**: Contains functions to log into the IMAP server using credentials from environment variables.
-- **`logout.py`**: Contains functions to log out from the IMAP server.
-- **`random_string.py`**: Contains functions to generate random strings, used for creating unique Google Meet event IDs.
-- **`env_setup.py`**: Contains functions to load environment variables from the `.env` file.
-
-## Seen Handler
-
-The provided script includes functionality to mark all unread messages as read in your inbox. This ensures that processed emails are not handled again in subsequent runs.
-
 ## Troubleshooting
 
-- **IMAP Connection Issues**: Ensure that IMAP is enabled in your Gmail settings and that the credentials are correct.
-- **Google Meet Scheduling Errors**: Verify that `credentials.json` is correctly set up and that the Google Calendar API is enabled in your Google Cloud project. Ensure the Google Meet link is generated and accessible by checking the printed link after running the script.
+### 1. Verification Issues
 
-For further assistance, please check the [Google Calendar API documentation](https://developers.google.com/calendar) and the [IMAPClient documentation](https://imapclient.readthedocs.io/en/latest/).
+If you encounter issues with OAuth 2.0 verification:
 
-##
-This README provides a clear guide for setting up and running the project, with additional explanations for each file’s purpose and troubleshooting tips.
+- **Access Blocked**: Ensure your app is verified if using sensitive scopes. Follow the [verification process](https://support.google.com/cloud/answer/9110914).
+- **App Passwords**: If verification is not feasible, you can use app passwords for Gmail with less secure apps enabled.
+
+### 2. Creating Google Meet Links
+
+If you face issues with Google Meet link creation:
+
+- Ensure you have the correct API credentials and permissions.
+- Verify that the `credentials.json` file is configured correctly and has the necessary permissions.
+
+## Files and Functions
+
+- **`main.py`**: Main script that handles email checking, forwarding, and scheduling Google Meet meetings.
+- **`gmeet_scheduler.py`**: Contains functions to create Google Meet events using Google Calendar API.
+- **`env_setup.py`**: Loads environment variables from the `.env` file.
+- **`requirements.txt`**: Lists the required Python libraries for the project.
+
+## License
+```plaintext
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+```
+
+### Summary of Changes
+
+1. **OAuth 2.0 Setup Instructions**: Added detailed steps for setting up OAuth 2.0 credentials, including the consent screen, credentials creation, and verification process.
+2. **Troubleshooting Section**: Included troubleshooting tips for verification issues and Google Meet link creation.
+3. **File and Function Descriptions**: Added descriptions of the key files and their functions.
+
+Feel free to adjust any details according to your specific needs or additional instructions.
