@@ -84,7 +84,7 @@ The provided script includes functionality to mark all unread messages as read i
 ## Troubleshooting
 
 - **IMAP Connection Issues**: Ensure that IMAP is enabled in your Gmail settings and that the credentials are correct.
-- **Google Meet Scheduling Errors**: Verify that `credentials.json` is correctly set up and that the Google Calendar API is enabled in your Google Cloud project.
+- **Google Meet Scheduling Errors**: Verify that `credentials.json` is correctly set up and that the Google Calendar API is enabled in your Google Cloud project. Ensure the Google Meet link is generated and accessible by checking the printed link after running the script.
 
 For further assistance, please check the [Google Calendar API documentation](https://developers.google.com/calendar) and the [IMAPClient documentation](https://imapclient.readthedocs.io/en/latest/).
 
