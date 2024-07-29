@@ -21,7 +21,7 @@ This project is a Python script designed to check for unread emails in a Gmail a
 - Google Cloud project with Calendar API enabled.
 - Environment variables set up for Gmail credentials and keywords.
 - `credentials.json` file for Google API credentials.
-
+```
 ## Installation
 
 ### 1. Clone the Repository
@@ -87,7 +87,5 @@ The provided script includes functionality to mark all unread messages as read i
 - **Google Meet Scheduling Errors**: Verify that `credentials.json` is correctly set up and that the Google Calendar API is enabled in your Google Cloud project.
 
 For further assistance, please check the [Google Calendar API documentation](https://developers.google.com/calendar) and the [IMAPClient documentation](https://imapclient.readthedocs.io/en/latest/).
-
-```
 
 This README provides a clear guide for setting up and running the project, with additional explanations for each file’s purpose and troubleshooting tips.
